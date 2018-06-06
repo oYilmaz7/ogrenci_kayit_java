@@ -1,0 +1,111 @@
+import java.io.*;
+
+public class Lineer
+{
+    private Student[] liste;
+    private Student ogrenciKýsa;
+    private char[] harfDizisi;
+    
+    private FileReader txtOkuyucu;
+    
+    private final int GENISLIK = 500;
+    
+    public Lineer()
+    {
+        liste = new Student[GENISLIK];
+        harfDizisi = new char[30000];
+        
+        //Text dosyasýný belirli bir karakter dizisine okuma
+        try
+        {
+            txtOkuyucu = new FileReader("Ogrenciler.txt");
+            
+            txtOkuyucu.read(harfDizisi);
+            
+            txtOkuyucu.close();
+        }
+        
+        catch(IOException e)
+        {
+            System.out.println("hata");
+        }
+        
+        //Kýsa Süreli oluþturulacak öðrenci için ad soyad ve numara belirleme
+        int numara = 0;
+        String ad = "";
+        String soyad = "";
+        
+        //Karakter dizisinden gerekli deðiþkenleri çekebilmek için sayaç oluþturma
+        int sayac = 0;
+        int sayacIlk = 0;
+        int m = 0;
+        
+        //Karakter dizisini sonuna kadar takip ederek öðrencileri oluþturma ve ekleme
+        while(sayac < harfDizisi.length - 2)
+        {
+            //Öðrencinin numarasýný alma
+            sayacIlk = sayac;
+            
+            while( sayac < harfDizisi.length && harfDizisi[sayac] != ' ')
+                sayac++;
+            for(int i = sayacIlk; i < sayac; i++)
+                numara = (numara * 10) + Character.getNumericValue(harfDizisi[i]);
+            sayac++;
+            
+            //Öðrencinin adýný alma
+            sayacIlk = sayac;
+            
+            while( sayac < harfDizisi.length && harfDizisi[sayac] != ' ')
+                sayac++;
+            
+            for(int j = sayacIlk; j < sayac; j++)
+                ad = ad + harfDizisi[j];
+            sayac++;
+            
+            //Öðrencinin soyadýný alma
+            sayacIlk = sayac;
+            
+            while( sayac < harfDizisi.length && harfDizisi[sayac] != ' ')
+                sayac++;
+            
+            for(int k = sayacIlk; k < sayac; k++)
+                soyad = soyad + harfDizisi[k];
+            sayac++;
+            
+            //Yeni bir kýsa süreli öðrenci oluþturma
+            ogrenciKýsa = new Student(numara, ad, soyad);
+            
+            //Öðrenciyi hash fonksiyonuna göre ekleme
+            liste[m] = ogrenciKýsa;
+            
+            
+            //Yeni öðrenci için deðiþkenleri sýfýrlama
+            numara = 0;
+            ad = "";
+            soyad = "";
+            m++;
+        }
+    }
+    
+    public String bul(int numara)
+    {
+        for(int i = 0; i < liste.length; i++)
+        {
+            if(numara == liste[i].ogrNoAl())
+                return (i+1) + ". " + liste[i].toString();
+        }
+        
+        return "Aradýðýnýz öðrenci bulunmamaktadýr.";
+    }
+    
+    //Öðrenci Listesini sýrayla bastýrma
+    public String toString()
+    {
+        String toReturn = "";
+        
+        for(int i = 0; i < liste.length; i++)
+            toReturn = toReturn + " " + (i+1) + ". "  +liste[i] + "\n";
+        return toReturn;
+    }
+    
+}

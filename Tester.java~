@@ -1,0 +1,60 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class Tester
+{
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        
+        RastgeleOgrenciler yeni = new RastgeleOgrenciler(500);
+        
+//        BKLineer deneme = new BKLineer();
+//        
+//        System.out.println(deneme.toString());
+//        
+//        
+//        System.out.println(deneme.bul(Integer.parseInt(scan.next())));
+//        
+//        
+//        
+//        KOLineer deneme2 = new KOLineer();
+//        
+//        System.out.println(deneme2.toString());
+//        
+//        
+//        System.out.println(deneme2.bul(Integer.parseInt(scan.next())));
+        
+//        
+//         KTLineer deneme3 = new KTLineer();
+//        
+//        System.out.println(deneme3.toString());
+//        
+//        
+//        System.out.println(deneme3.bul(Integer.parseInt(scan.next())));
+        
+//        
+//        BKAyrik deneme4 = new BKAyrik();
+//        
+//        System.out.println(deneme4.toString());
+//        
+//        
+//        System.out.println(deneme4.bul(Integer.parseInt(scan.next())));
+        
+//        
+//        KOAyrik deneme5 = new KOAyrik();
+//        
+//        System.out.println(deneme5.toString());
+//        
+//        
+//        System.out.println(deneme5.bul(Integer.parseInt(scan.next())));
+        
+        
+//        KTAyrik deneme6 = new KTAyrik();
+//        
+//        System.out.println(deneme6.toString());
+//        
+//        
+//        System.out.println(deneme6.bul(Integer.parseInt(scan.next())));
+    }
+}

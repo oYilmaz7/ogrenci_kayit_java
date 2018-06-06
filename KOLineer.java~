@@ -1,0 +1,104 @@
+import java.io.*;
+
+public class KOLineer
+{
+    public KOLineer()
+    {
+        liste = new Student[500];
+        harfDizisi = new char[30000];
+        
+        //Text dosyasýný belirli bir karakter dizisine okuma
+        try
+        {
+            txtOkuyucu = new FileReader("Ogrenciler.txt");
+            
+            txtOkuyucu.read(harfDizisi);
+            
+            txtOkuyucu.close();
+        }
+        
+        catch(IOException e)
+        {
+            System.out.println("hata");
+        }
+        
+        //Kýsa Süreli oluþturulacak öðrenci için ad soyad ve numara belirleme
+        int numara = 0;
+        String ad = "";
+        String soyad = "";
+        
+        //Karakter dizisinden gerekli deðiþkenleri çekebilmek için sayaç oluþturma
+        int sayac = 0;
+        int sayacIlk = 0;
+        
+        //Karakter dizisini sonuna kadar takip ederek öðrencileri oluþturma ve ekleme
+        while(sayac < harfDizisi.length - 2)
+        {
+            //Öðrencinin numarasýný alma
+            sayacIlk = sayac;
+            
+            while( sayac < harfDizisi.length && harfDizisi[sayac] != ' ')
+                sayac++;
+            for(int i = sayacIlk; i < sayac; i++)
+                numara = (numara * 10) + Character.getNumericValue(harfDizisi[i]);
+            sayac++;
+            
+            //Öðrencinin adýný alma
+            sayacIlk = sayac;
+            
+            while( sayac < harfDizisi.length && harfDizisi[sayac] != ' ')
+                sayac++;
+            
+            for(int j = sayacIlk; j < sayac; j++)
+                ad = ad + harfDizisi[j];
+            sayac++;
+            
+            //Öðrencinin soyadýný alma
+            sayacIlk = sayac;
+            
+            while( sayac < harfDizisi.length && harfDizisi[sayac] != ' ')
+                sayac++;
+            
+            for(int k = sayacIlk; k < sayac; k++)
+                soyad = soyad + harfDizisi[k];
+            sayac++;
+            
+            //Yeni bir kýsa süreli öðrenci oluþturma
+            ogrenciKýsa = new Student(numara, ad, soyad);
+            
+            //Öðrenciyi hash fonksiyonuna göre ekleme
+            ekle(ogrenciKýsa);
+            
+            //Yeni öðrenci için deðiþkenleri sýfýrlama
+            numara = 0;
+            ad = "";
+            soyad = "";
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public String toString()
+    {
+        String toReturn = "";
+        
+        for(int i = 0; i < liste.length; i++)
+            toReturn = toReturn + " " + i + ". "  +liste[i] + "\n";
+        return toReturn;
+    }
+    
+    //Denemede kullanmak için listeyi döndürme
+    public Student[] listeDon()
+    {
+        return liste;
+    }
+}

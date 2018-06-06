@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20140826-r5761">
+  <project autorefresh="false" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="BKAyrik.java" package="" timestamp="16-May-2016 12:41:51">
+        <select from="2724" to="2724"/>
+        <scroll column="1365" row="0"/>
+      </file>
+      <file name="KTAyrik.java" package="" timestamp="16-May-2016 11:57:19">
+        <select from="2724" to="2724"/>
+        <scroll column="1365" row="0"/>
+      </file>
+      <file name="KOLineer.java" package="" timestamp="16-May-2016 11:14:52">
+        <select from="2724" to="2724"/>
+        <scroll column="1365" row="0"/>
+      </file>
+      <file name="BKLineer.java" package="" timestamp="16-May-2016 11:14:52">
+        <select from="2724" to="2724"/>
+        <scroll column="1365" row="0"/>
+      </file>
+      <file name="KTLineer.java" package="" timestamp="16-May-2016 11:14:52">
+        <select from="2724" to="2724"/>
+        <scroll column="1365" row="0"/>
+      </file>
+      <file name="Lineer.java" package="" timestamp="16-May-2016 11:15:44">
+        <select from="2724" to="2724"/>
+        <scroll column="1365" row="0"/>
+      </file>
+      <file name="KOAyrik.java" package="" timestamp="16-May-2016 11:59:58">
+        <select from="2724" to="2724"/>
+        <scroll column="1365" row="0"/>
+      </file>
+      <file name="RastgeleOgrenciler.java" package="" timestamp="16-May-2016 12:13:10">
+        <select from="2724" to="2724"/>
+        <scroll column="1365" row="0"/>
+      </file>
+      <file name="Student.java" package="" timestamp="16-May-2016 12:40:38">
+        <select from="2724" to="2724"/>
+        <scroll column="1365" row="0"/>
+      </file>
+      <file name="Tester.java" package="" timestamp="16-May-2016 12:40:38">
+        <select from="2724" to="2724"/>
+        <scroll column="1365" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
